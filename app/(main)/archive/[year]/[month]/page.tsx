@@ -1,10 +1,10 @@
-import Loading from "@/app/loading"
-import Archive from "@/components/archive/Archive"
-import LayoutWithSidebar from "@/components/layout/LayoutWithSidebar"
+import { Suspense } from "react"
 import { microcms } from "@/lib/microcms"
 import { BlogType } from "@/types"
 import { blogPerPage } from "@/lib/utils"
-import { Suspense } from "react"
+import Archive from "@/components/archive/Archive"
+import LayoutWithSidebar from "@/components/layout/LayoutWithSidebar"
+import Loading from "@/app/loading"
 
 export const revalidate = 0
 
@@ -14,13 +14,12 @@ interface ArchivePageProps {
     month: string
   }
   searchParams: {
-   [key: string]: string | undefined
- }
+    [key: string]: string | undefined
+  }
 }
 
 const ArchivePage = async ({ params, searchParams }: ArchivePageProps) => {
   const { year, month } = params
-
   const { page, perPage } = searchParams
 
   const limit = typeof perPage === "string" ? parseInt(perPage) : blogPerPage

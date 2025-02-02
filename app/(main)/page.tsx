@@ -9,10 +9,10 @@ import { Suspense } from "react"
 export const revalidate = 0
 
 interface BlogPageProps {
-   searchParams: {
-     [key: string]: string | undefined
-   }
- }
+  searchParams: {
+    [key: string]: string | undefined
+  }
+}
 
 const BlogPage = async ({ searchParams }: BlogPageProps) => {
   const { page, perPage } = searchParams
@@ -29,7 +29,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
     },
   })
 
-  const pageCount = Math.ceil(allBlogs.totalCount / limit)
+   const pageCount = Math.ceil(allBlogs.totalCount / limit)
 
   return (
     <Suspense fallback={<Loading />}>

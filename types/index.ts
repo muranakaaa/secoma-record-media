@@ -1,4 +1,3 @@
-
 export interface AboutType {
   id: string
   content: string
@@ -21,9 +20,6 @@ export interface BlogType {
     url: string
   }
   category: CategoryType
-  ranking?: number
-  isRecommended: boolean
-  isSpecial: boolean
   createdAt: string
   publishedAt: string
   updatedAt: string
