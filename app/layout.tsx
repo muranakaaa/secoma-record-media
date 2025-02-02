@@ -1,3 +1,4 @@
+import QueryProvider from "@/components/providers/QueryProvider"
 import type { Metadata, Viewport } from "next"
 import { M_PLUS_1 } from "next/font/google"
 import "./globals.css"
@@ -26,7 +27,9 @@ interface RootLayoutProps {
 const RootLayout = async ({ children }: RootLayoutProps) => {
   return (
     <html lang="ja">
-      <body className={mPlus1.className}>{children}</body>
+      <body className={mPlus1.className}>
+        <QueryProvider>{children}</QueryProvider>
+      </body>
     </html>
   )
 }

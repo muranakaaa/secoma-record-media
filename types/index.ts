@@ -1,3 +1,4 @@
+
 export interface AboutType {
   id: string
   content: string
@@ -20,7 +21,28 @@ export interface BlogType {
     url: string
   }
   category: CategoryType
+  ranking?: number
+  isRecommended: boolean
+  isSpecial: boolean
   createdAt: string
   publishedAt: string
   updatedAt: string
+}
+
+export interface ArchiveMonthType {
+  year: number
+  month: number
+  count: number
+}
+
+export interface CategoryCountType {
+  id: string
+  name: string
+  count: number
+}
+
+export interface SidebarData {
+  latestBlogs: BlogType[]
+  archiveMonths: ArchiveMonthType[]
+  categoryCounts: CategoryCountType[]
 }
